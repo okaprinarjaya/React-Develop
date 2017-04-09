@@ -7,7 +7,6 @@ import { syncHistoryWithStore } from "react-router-redux"
 import store from './configureStore'
 import App from "./components/App"
 import TodoApp from "./components/TodoApp"
-import Foo from "./components/Foo"
 import Bar from "./components/Bar"
 import PuzzleAppContainer from './containers/PuzzleAppContainer'
 
@@ -20,7 +19,6 @@ const RootApp = () => {
                 <Route path="/" component={App}>
                     <Route path="todolist/(:filterTodo)" component={TodoApp} />
                     <Route path="puzzle/(:operation)" component={PuzzleAppContainer} />
-                    <Route path="foo" component={Foo} />
                     <Route path="bar" component={Bar} />
                 </Route>
             </Router>

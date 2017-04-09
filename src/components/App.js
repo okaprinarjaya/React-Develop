@@ -6,7 +6,6 @@ const App = ({children}) => (
         <ul role="nav">
             <li><Link to="/todolist/">Todo List</Link></li>
             <li><Link to="/puzzle/">Puzzle Math</Link></li>
-            <li><Link to="/foo">Foo</Link></li>
             <li><Link to="/bar">Bar</Link></li>
         </ul>
 
