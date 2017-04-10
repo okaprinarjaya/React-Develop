@@ -1,14 +1,14 @@
 import { combineReducers } from "redux"
-
+import { polyglotReducer } from 'redux-polyglot'
 import { LOCATION_CHANGE } from 'react-router-redux'
 
-import { 
-    ADD_TODO, 
-    TOGGLE_TODO, 
-    SET_VISIBILITY_FILTER, 
+import {
+    ADD_TODO,
+    TOGGLE_TODO,
+    SET_VISIBILITY_FILTER,
     VisibilityFilters,
     SET_OPERATION,
-    SET_FILTER_TODO 
+    SET_FILTER_TODO
 } from "../actions/actionTypes"
 
 const { SHOW_ALL } = VisibilityFilters
@@ -65,7 +65,7 @@ function operation(state = "", action)
         if (test) {
             const pathname = action.payload.pathname
             const [_, __, operation = ""] = pathname.split('/')
-            
+
             return operation
         }
     }
@@ -73,13 +73,13 @@ function operation(state = "", action)
     return state
 }
 
-// This initial state is *copied* from react-router-redux's routerReducer 
+// This initial state is *copied* from react-router-redux's routerReducer
 // (the property name 'locationBeforeTransitions' is
 // because this is designed for use with react-router)
 const initialState = { locationBeforeTransitions: null };
 
 function routing(state = initialState, action) {
-    
+
     // This LOCATION_CHANGE case is copied from react-router-redux's routerReducer
     if (action.type === LOCATION_CHANGE) {
         return {...state, locationBeforeTransitions: action.payload }
@@ -90,7 +90,7 @@ function routing(state = initialState, action) {
     if (action.type === SET_OPERATION) {
         const { name } = action;
         let location = state.locationBeforeTransitions;
-        
+
         const pathname = `/puzzle/${name}`;
         location = { ...location, pathname, action: 'PUSH' };
 
@@ -123,7 +123,7 @@ function filterTodo(state = "", action)
         if (test) {
             const pathname = action.payload.pathname
             const [_, __, filterTodo = ""] = pathname.split('/')
-            
+
             return filterTodo
         }
     }
@@ -135,7 +135,8 @@ const todoApp = combineReducers({
     todos,
     operation,
     filterTodo,
-    routing
+    routing,
+    polyglot: polyglotReducer
 })
 
 export default todoApp

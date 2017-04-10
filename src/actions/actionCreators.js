@@ -1,6 +1,6 @@
 import {
-    ADD_TODO, 
-    TOGGLE_TODO, 
+    ADD_TODO,
+    TOGGLE_TODO,
     SET_OPERATION,
     SET_FILTER_TODO
 } from "./actionTypes"
@@ -28,6 +28,7 @@ export function setOperation(name)
 {
     return {
         type: SET_OPERATION,
+        payload: { locale: "fr" },
         name
     }
 }

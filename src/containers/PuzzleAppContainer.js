@@ -1,9 +1,14 @@
 import { connect } from "react-redux"
+import { createGetP } from 'redux-polyglot'
 import { setOperation } from "../actions/actionCreators"
 import PuzzleApp from "../components/PuzzleApp"
 
 const mapStateToProps = (state) => {
-    return state
+    const { t: translate } = createGetP({allowMissing: true})(state)
+    return {
+      ...state,
+      translate
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {

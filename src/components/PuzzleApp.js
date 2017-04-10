@@ -1,13 +1,13 @@
 import React from 'react'
 
-const PuzzleApp = ({ operation, onChangeOperation }) => {
+const PuzzleApp = ({ operation, onChangeOperation, translate }) => {
     const isCorrect = operation === 'divide'
 
     return (
         <div className="container">
             <div className="inner">
                 <div className="box">
-                    <h1 className="heading">Make and Magic in Wonderland!</h1>
+                    <h1 className="heading">{translate("math and magic in wonderland")}</h1>
 
                     <div className="ta-center">
                         <span>10</span>
