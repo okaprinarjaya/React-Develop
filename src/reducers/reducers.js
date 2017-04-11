@@ -131,11 +131,20 @@ function filterTodo(state = "", action)
     return state
 }
 
+function locale(state = "en", action) {
+  if (action.type === 'SET_LOCALE') {
+    return action.payload.locale
+  }
+
+  return state
+}
+
 const todoApp = combineReducers({
     todos,
     operation,
     filterTodo,
     routing,
+    locale,
     polyglot: polyglotReducer
 })
 

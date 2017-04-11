@@ -5,8 +5,8 @@ import { Router, Route, browserHistory } from "react-router"
 import { syncHistoryWithStore } from "react-router-redux"
 
 import store from './configureStore'
-import App from "./components/App"
-import TodoApp from "./components/TodoApp"
+import AppContainer from "./containers/AppContainer"
+import TodoAppContainer from "./containers/TodoAppContainer"
 import Bar from "./components/Bar"
 import PuzzleAppContainer from './containers/PuzzleAppContainer'
 
@@ -16,8 +16,8 @@ const RootApp = () => {
     return (
         <Provider store={store}>
             <Router history={history}>
-                <Route path="/" component={App}>
-                    <Route path="todolist/(:filterTodo)" component={TodoApp} />
+                <Route path="/" component={AppContainer}>
+                    <Route path="todolist/(:filterTodo)" component={TodoAppContainer} />
                     <Route path="puzzle/(:operation)" component={PuzzleAppContainer} />
                     <Route path="bar" component={Bar} />
                 </Route>

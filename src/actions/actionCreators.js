@@ -28,7 +28,6 @@ export function setOperation(name)
 {
     return {
         type: SET_OPERATION,
-        payload: { locale: "fr" },
         name
     }
 }
@@ -39,4 +38,11 @@ export function setFilterTodo(filter)
         type: SET_FILTER_TODO,
         filter
     }
+}
+
+export function setLocale(locale) {
+  return {
+    type: 'SET_LOCALE',
+    payload: {locale: locale}
+  }
 }
