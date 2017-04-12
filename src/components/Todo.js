@@ -1,4 +1,5 @@
-import React, { PropTypes } from "react"
+import React from "react"
+import PropTypes from 'prop-types'
 
 class Todo extends React.Component
 {
@@ -16,7 +17,7 @@ class Todo extends React.Component
     {
         return (
             <li
-              onClick={() => this.handlerClick()} 
+              onClick={() => this.handlerClick()}
               style={{textDecoration: this.props.completed ? "line-through" : "none"}}
             >
                 {this.props.text}
