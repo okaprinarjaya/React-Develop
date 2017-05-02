@@ -62,8 +62,8 @@ const middlewares = [createPolyglotMiddleware(
 )]
 
 const appliedMiddleware = applyMiddleware(...middlewares);
-// const createReduxStore = compose(appliedMiddleware, window.devToolsExtension())
-const createReduxStore = appliedMiddleware
+const createReduxStore = compose(appliedMiddleware, window.devToolsExtension())
+// const createReduxStore = appliedMiddleware
 const store = createReduxStore(createStore)(todoApp, window.__INITIAL_STATE__);
 
 if (module.hot) {

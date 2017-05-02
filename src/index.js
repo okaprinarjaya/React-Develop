@@ -7,7 +7,7 @@ import { syncHistoryWithStore } from "react-router-redux"
 import store from './configureStore'
 import AppContainer from "./containers/AppContainer"
 import TodoAppContainer from "./containers/TodoAppContainer"
-import Bar from "./components/Bar"
+import BarContainer from "./containers/BarContainer"
 import PuzzleAppContainer from './containers/PuzzleAppContainer'
 
 const history = syncHistoryWithStore(browserHistory, store)
@@ -19,7 +19,7 @@ const RootApp = () => {
                 <Route path="/" component={AppContainer}>
                     <Route path="todolist/(:filterTodo)" component={TodoAppContainer} />
                     <Route path="puzzle/(:operation)" component={PuzzleAppContainer} />
-                    <Route path="bar" component={Bar} />
+                    <Route path="bar" component={BarContainer} />
                 </Route>
             </Router>
         </Provider>
@@ -27,8 +27,8 @@ const RootApp = () => {
 }
 
 /*if (module.hot) {
-    module.hot.accept('./components/App', () => {
-        const AppNew = require('./components/App').default
+    module.hot.accept('./containers/AppContainer', () => {
+        const AppNew = require('./containers/AppContainer').default
         render(
             <RootApp TheApp={AppNew} />,
             document.getElementById("react-oprek")
