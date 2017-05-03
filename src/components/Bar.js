@@ -2,7 +2,8 @@ import React from 'react'
 
 const Bar = (props) => {
   props.anotherThing.canBeAFunction()
-
+  props.commonDispatchMethodHandler()
+  
   return (
     <div>
       <div>About Bar {`${props.locale}, ${props.configurations.cool}`}</div>

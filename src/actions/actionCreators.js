@@ -46,3 +46,12 @@ export function setLocale(locale) {
     payload: {locale: locale}
   }
 }
+
+export function commonDispatchMethod(param1) {
+  console.log("common dispatch method called")
+  
+  return {
+    type: 'SET_SOMETHING_COMMON',
+    param: param1
+  }
+}

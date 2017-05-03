@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import supplyConfigurations from '../supplyConfigurations'
 import supplyAnotherThing from '../supplyAnotherThing'
 import supplySomeStateAttr from '../supplySomeStateAttr'
+import { supplyCommonActionDispatchMethod } from '../componentPreparatory'
 import Bar from '../components/Bar'
 
 const config = {
@@ -19,9 +20,10 @@ const anotherThing = {
 }
 
 const BarComponentSetup = supplySomeStateAttr(supplyAnotherThing(anotherThing, supplyConfigurations(config, Bar)))
+const BarComponentSetup2 = supplyCommonActionDispatchMethod(BarComponentSetup)
 
 const BarContainer = connect(
   (state) => ({locale: state.locale})
-)(BarComponentSetup)
+)(BarComponentSetup2)
 
 export default BarContainer
